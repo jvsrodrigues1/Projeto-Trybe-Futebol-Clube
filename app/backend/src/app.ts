@@ -1,6 +1,6 @@
 import * as express from 'express';
 import teamsRoutes from './routes/TeamsRoute';
-
+// push das estrelas!
 class App {
   public app: express.Express;
 
