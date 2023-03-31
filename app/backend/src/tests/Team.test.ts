@@ -12,7 +12,7 @@ const { expect } = chai;
 
 describe('Testes na rota /teams', () => {
     
- let chaiHttpRes: Response;
+ let chaiResponseHttp: Response;
 
  const teamsList = [
   {
@@ -46,18 +46,33 @@ describe('Testes na rota /teams', () => {
    afterEach(()=>{ (TeamModel.findAll as sinon.SinonStub).restore()})
 
 
-  it('Testa se a rota GET/teams retorna uma lista com todos os times corretamente', async() => {
+  test('Testa se a rota GET/teams retorna uma lista com todos os times corretamente', async() => {
  
-    chaiHttpRes = await chai.request(app).get('/teams');
-    expect(chaiHttpRes.status).to.be.equal(200);
-    expect(chaiHttpRes.body).to.be.deep.equal(teamsList);
+    chaiResponseHttp = await chai.request(app).get('/teams');
+    expect(chaiResponseHttp.status).to.be.equal(200);
+    expect(chaiResponseHttp.body).to.be.deep.equal(teamsList);
     
   });
-  it('Testa se a rota GET/teams/:id retorna dados do time Corinthians o maior do Mundo! ', async() => {
+  test('Testa se a rota GET/teams/:id retorna dados do time Corinthians o maior do Mundo! ', async() => {
  
-    chaiHttpRes = await chai.request(app).get('/teams/4').send();
-    expect(chaiHttpRes.status).to.be.equal(200);
+    chaiResponseHttp = await chai.request(app).get('/teams/4').send();
+    expect(chaiResponseHttp.status).to.be.equal(200);
     
     
   });
+
+   test('Testa se GET /teams:id retorna o time correspondente ao id', async () => {
+    chaiResponseHttp = await chai
+    .request(app)
+    .get('/teams/2')
+
+    expect(chaiResponseHttp.body).to.be.deep.equals(teamsList);
+  });
+  test('Testa se GET /teams:id retorna o time correspondente ao id', async () => {
+    chaiResponseHttp = await chai
+    .request(app)
+    .post('/login')
+
+    expect(chaiResponseHttp.body).to.be.deep.equals(teamsList);
+});
 });
