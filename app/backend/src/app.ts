@@ -1,6 +1,7 @@
 import * as express from 'express';
 import teamsRoutes from './routes/TeamsRoute';
 import usersRoutes from './routes/UsersRoute';
+import matchesRoutes from './routes/MatchesRoute';
 // push das estrelas!!!
 class App {
   public app: express.Express;
@@ -26,6 +27,7 @@ class App {
     this.app.use(accessControl);
     this.app.use(teamsRoutes);
     this.app.use(usersRoutes);
+    this.app.use(matchesRoutes);
   }
 
   public start(PORT: string | number):void {
