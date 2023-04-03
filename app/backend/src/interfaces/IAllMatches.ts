@@ -2,7 +2,7 @@ import MatchesModel from '../database/models/UserModels';
 import IUpdateMatches from './IUpdatedMatches';
 import IMatches from './IMatches';
 
-export default interface IServiceMatches {
+export default interface IAllMatches {
   createNewMatch(body:IMatches):Promise<MatchesModel>
   findById(id:string):Promise<MatchesModel | null>
   findAll():Promise<MatchesModel[]>;
