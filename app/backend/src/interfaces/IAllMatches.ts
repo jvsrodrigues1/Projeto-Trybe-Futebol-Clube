@@ -1,4 +1,4 @@
-import MatchesModel from '../database/models/UserModels';
+import MatchesModel from '../database/models/MatchesModels';
 import IUpdateMatches from './IUpdatedMatches';
 import IMatches from './IMatches';
 
