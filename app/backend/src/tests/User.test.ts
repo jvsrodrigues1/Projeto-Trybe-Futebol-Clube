@@ -13,7 +13,7 @@ describe('Testes na rota /users e /login', () => {
 
   let HttpChaiResponse: Response;
 
-  test(`Testa se não é possível efetuar login sem um email ou password na rota GET/login.`, async () => {
+  it(`Testa se não é possível efetuar login sem um email ou password na rota GET/login.`, async () => {
     const invalidEmail = {
       "email": "",
       "password": "passwordteste123"
@@ -28,7 +28,7 @@ describe('Testes na rota /users e /login', () => {
     expect(resinvalidPassword.status).to.be.deep.equal(400);
 
   });
-  test(`Testa se não é possível efetuar login com um usuário inválido na rota POST/login.`, async () => {
+  it(`Testa se não é possível efetuar login com um usuário inválido na rota POST/login.`, async () => {
     const wrongUser = {
       "email": "test@test.com",
       "password": "pass1"
@@ -38,7 +38,7 @@ describe('Testes na rota /users e /login', () => {
 
   });
 
-  test(`Testa se é possível efetuar login com um usuário válido na rota POST/login.`, async () => {
+  it(`Testa se é possível efetuar login com um usuário válido na rota POST/login.`, async () => {
     const wrongUser = {
       "email": "user@user.com",
       "password": "secret_user"
@@ -48,7 +48,7 @@ describe('Testes na rota /users e /login', () => {
 
   });
 
-  test(`Testa se um token não é retornado ao efetuar login com dados inválidos na rota GET/login/role.`, async () => {
+  it(`Testa se um token não é retornado ao efetuar login com dados inválidos na rota GET/login/role.`, async () => {
     const wrongUser = {
       "email": "test@test.com",
       "password": "pass1"
