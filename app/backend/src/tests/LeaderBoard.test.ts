@@ -11,7 +11,7 @@ chai.use(chaiHttp);
 
 const { expect } = chai;
 
-describe('Teste LeaderBoard', () => {
+describe('Teste na rota LeaderBoard', () => {
 
   let chaiHttpResponse: Response;
 
