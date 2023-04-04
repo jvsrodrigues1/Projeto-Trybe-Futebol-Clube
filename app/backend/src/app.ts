@@ -3,7 +3,7 @@ import teamsRoutes from './routes/TeamsRoute';
 import usersRoutes from './routes/UsersRoute';
 import matchesRoutes from './routes/MatchesRoute';
 import leaderboardRoutes from './routes/LeaderBoardsRoute';
-// push das estrelas!!!!
+// push das estrelas!!!!!
 class App {
   public app: express.Express;
 
